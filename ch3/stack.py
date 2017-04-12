@@ -43,6 +43,11 @@ class Stack():
        'Annika'
 
     She can wait...a stack of three cats is pretty adorable!
+
+    But for the sake of doing it, let's see what our repr comes out as:
+
+       >>> print(stackcats)
+       <Stack Num items: 3 Top: Annika>
     """
 
     def __init__(self):
