@@ -73,3 +73,9 @@ class Stack():
         """Remove an item from the top of the stack and return it."""
 
         return self.items.pop()
+
+
+    def peek(self):
+        """Check the item at the top of the stack and return its value."""
+
+        return self.items[-1]
