@@ -47,4 +47,34 @@ class MinStack(Stack):
         super().__init__()
         self.mins = []
 
+
+    def push(self, item):
+        """Place item on top of stack. Update mins as needed."""
+
+        if self.is_empty() or item < self.mins[-1]:
+            self.mins.append(item)
+
+        super().push(item)
+
+    def pop(self):
+        """Remove item from top of stack and return its value. Update mins."""
+
+        popped_item = super().pop()
+
+        if popped_item == self.mins[-1]:
+            self.mins.pop()
+
+        return popped_item
+
+    def min(self):
+        """Return the smallest element on the stack."""
+
+        if self.is_empty():
+            return None
+
+        else:
+            return self.mins[-1]
+
+
+
     
