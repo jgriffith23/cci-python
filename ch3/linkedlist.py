@@ -105,6 +105,61 @@ class LinkedList():
         self.tail = new_node
 
 
+    def remove(self, data):
+        """Remove the node with the given data from the linked list.
+
+        Only remove first occurrence seen.
+        """
+
+        # Start at the head.
+        current = self.head
+
+        # Iterate over the linked list. If we've hit the end, we can just
+        # adjust the tail. Otherwise, we have to move pointers for both
+        # nodes around the node to remove.
+
+        while current is not None:
+
+            if current.data == data: 
+                # A typical case -- removing from the middle.
+
+                if current.prev is not None and current.next is not None:
+                    current.prev.next = current.next
+                    current.next.prev = current.prev
+
+                # Removing the head.
+
+                elif current.prev is None:
+                    if current.next is None:
+                        self.head = None
+                        self.tail = None
+
+                    else:
+                        self.head = self.head.next
+                        self.head.prev = None
+
+                # Removing the tail, when it is not the head.
+
+                else:
+                    current.prev.next = None
+                    self.tail = current.prev
+
+            current = current.next
+
+
+    def display(self):
+        """Blat the contents of the list to stdout."""
+
+        current = self.head
+
+        while current is not None:
+            print(current.data)
+
+            current = current.next
+        
+
+    
+
 
 
 
