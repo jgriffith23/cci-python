@@ -65,5 +65,28 @@ class Queue():
     def __repr__(self):
         """A human-readable representation of the queue instance."""
 
-        return f"<Queue Contains {len(self.items)} Front: {self.peek()}>"
+        return f"<Queue Contains {len(self.items)} items. Front: {self.peek()}>"
 
+
+    def is_empty(self):
+        """Return True if no items in queue. Return False otherwise."""
+
+        return len(self.items) == 0
+
+
+    def enqueue(self, item):
+        """Place an item at the back of the queue."""
+
+        self.items.append(item)
+
+
+    def dequeue(self):
+        """Remove an item from the front of the queue and return it."""
+
+        return self.items.pop(0)
+
+
+    def peek(self):
+        """Check the item at the front of the queue and return its value."""
+
+        return self.items[0]
