@@ -15,28 +15,52 @@ class MinStack(Stack):
     is the min functionality. Let's test that.
 
        >>> nums = MinStack()
+
+    Add a number. Since it's the first one, it should be the smallest.
+
        >>> nums.push(5)
        >>> nums.min()
        5
+
+    Add a smaller number:
+
        >>> nums.push(3)
        >>> nums.min()
        3
+
+    Add an even smaller number:
+
        >>> nums.push(0)
        >>> nums.min()
        0
+
+    Add a number bigger than the last one. The min should stay the same.
+
        >>> nums.push(1)
        >>> nums.min()
        0
+
+    Pop past the smallest number:
+
        >>> nums.pop()
        1
        >>> nums.pop()
        0
+
+    Has the min changed?
+
        >>> nums.min()
        3
+
+    Now pop that. Are we back to the beginning?
+
        >>> nums.pop()
        3
        >>> nums.min()
        5
+
+    Do we return a reasonable value for an empty stack's min?
+
        >>> nums.pop()
        5
        >>> print(nums.min())
