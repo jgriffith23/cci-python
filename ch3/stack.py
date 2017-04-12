@@ -55,3 +55,16 @@ class Stack():
         """A human-readable representation of the stack insance."""
 
         return f"<Stack Num items: {len(self.items)} Top: {self.peek()}>"
+
+
+    def is_empty(self):
+        """Return True if no items on stack. Return False otherwise."""
+
+        return len(self.items) == 0
+
+
+    def push(self, item):
+        """Place an item on the top of the stack."""
+
+        self.items.append(item)
+    
