@@ -29,18 +29,18 @@ class Stack():
     Yay! Which cat is on top? 
 
         >>> stackcats.peek()
-        Jack
+        'Jack'
 
     Let's pet Jack.
 
         >>> cat_to_pet = stackcats.pop()
         >>> cat_to_pet
-        Jack
+        'Jack'
 
     Who's next?
 
        >>> stackcats.peek()
-       Annika
+       'Annika'
 
     She can wait...a stack of three cats is pretty adorable!
     """
@@ -68,3 +68,8 @@ class Stack():
 
         self.items.append(item)
     
+
+    def pop(self):
+        """Remove an item from the top of the stack and return it."""
+
+        return self.items.pop()
