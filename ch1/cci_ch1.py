@@ -27,7 +27,16 @@ def is_unique(chars):
 
 
 def is_permutation(string1, string2):
-    """Given two strings, determine whether one is a permutation of the other."""
+    """Given two strings, determine whether one is a permutation of the other.
+
+    >>> is_permutation('hackbright', 'ghtribckha')
+    True
+
+    >>> is_permutation('dog', 'ogd')
+    True
+    """
+
+    print "FINISH THIS"
 
 if __name__ == "__main__":
     import doctest
