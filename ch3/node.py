@@ -73,7 +73,6 @@ class SinglyLinkedList():
 
         while current is not None:
             tmp = current.next
-            print(f"Curr: {current} Prev: {prev} Tmp: {tmp}")
             current.next = prev
 
             prev = current
@@ -94,7 +93,6 @@ class SinglyLinkedList():
             tmp.next = next
             next = tmp
             current = current.next
-            print(tmp, tmp.next)
 
         return SinglyLinkedList(next)
 
