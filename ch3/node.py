@@ -68,15 +68,33 @@ class SinglyLinkedList():
     def reverse(self):
         """Reverse the linked list in place."""
 
-        current = head
+        current = self.head
         prev = None
 
-        while current:
+        while current is not None:
             tmp = current.next
+            print(f"Curr: {current} Prev: {prev} Tmp: {tmp}")
             current.next = prev
 
             prev = current
             current = tmp
 
         # Update the head
-        self.head = current
+        self.head = prev
+
+
+    def get_reversed(self):
+        """Return a reversed version of the linked list. Preserve original."""
+
+        next = None
+        current = self.head
+
+        while current:
+            tmp = Node(current.data)
+            tmp.next = next
+            next = tmp
+            current = current.next
+            print(tmp, tmp.next)
+
+        return SinglyLinkedList(next)
+
