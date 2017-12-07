@@ -156,7 +156,26 @@ class LinkedList():
             print(current.data)
 
             current = current.next
-        
+
+
+    def reverse(self):
+        """Reverse the linked list in place."""
+
+        current = self.head
+        prev = None
+
+        while current is not None:
+            tmp = current.next
+            current.prev = current.next
+            current.next = prev
+            prev = current
+            current = tmp
+
+        tmp_tail = self.tail
+        self.tail = self.head
+        self.head = tmp_tail
+
+
 
     
 

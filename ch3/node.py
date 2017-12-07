@@ -45,3 +45,38 @@ class Node():
 
         return f"<Node {self.data}>"
 
+
+class SinglyLinkedList():
+    """A linked list that only goes in one direction. No tail."""
+
+    def __init__(self, head=None):
+
+        self.head = head
+
+
+    def display(self):
+        """Blat the contents of the list to stdout."""
+
+        current = self.head
+
+        while current is not None:
+            print(current.data)
+
+            current = current.next
+
+
+    def reverse(self):
+        """Reverse the linked list in place."""
+
+        current = head
+        prev = None
+
+        while current:
+            tmp = current.next
+            current.next = prev
+
+            prev = current
+            current = tmp
+
+        # Update the head
+        self.head = current
