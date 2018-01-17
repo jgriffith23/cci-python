@@ -29,7 +29,6 @@ class Node():
         <Node apple>
         >>> print(berry.next)
         None
-        
     """
 
     def __init__(self, data):
@@ -38,7 +37,6 @@ class Node():
         self.data = data
         self.next = None
         self.prev = None
-
 
     def __repr__(self):
         """A human-readable representation of a node."""
@@ -53,7 +51,6 @@ class SinglyLinkedList():
 
         self.head = head
 
-
     def display(self):
         """Blat the contents of the list to stdout."""
 
@@ -63,7 +60,6 @@ class SinglyLinkedList():
             print(current.data)
 
             current = current.next
-
 
     def reverse(self):
         """Reverse the linked list in place."""
@@ -81,7 +77,6 @@ class SinglyLinkedList():
         # Update the head
         self.head = prev
 
-
     def get_reversed(self):
         """Return a reversed version of the linked list. Preserve original."""
 
@@ -95,4 +90,3 @@ class SinglyLinkedList():
             current = current.next
 
         return SinglyLinkedList(next)
-
